@@ -27,19 +27,16 @@ function runNumbers()
         {
             if(!hasOne)
             {
-                if (e % element.which == 0)
+                if (e % element == 0)
                 {
 
                     hasOne = true
                 }
                 else
                 {
-                    element.which.forEach(function(el)
+                    element.forEach(function(el)
                     {
-                        if((typof el === string )
-                        {
-
-                        }    
+                        console.log(el)
                     })
                     console.log(e)
                     hasOne = true
