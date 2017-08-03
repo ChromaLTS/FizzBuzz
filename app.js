@@ -1,9 +1,10 @@
-let times = 100;
+let times = 1000;
 let numberArray = []
-let arrayOfModulus = {
-        a:[3, "fuzzy"],
-        b:[5, "buzz"] 
-};
+let arrayOfModulus = [
+    [3, "Fuzz"],
+    [5, "Buzz"],
+    [7, "Cuzz"]
+]
 
 init();
 runNumbers();
@@ -19,32 +20,32 @@ function init()
 
 function runNumbers()
 {
-    let output;
     numberArray.forEach(function(e) 
     {
-        let hasOne = false
-        Object.keys(arrayOfModulus).forEach(function(element) 
+        let output = '';
+        arrayOfModulus.forEach(function(el)
         {
-            if(!hasOne)
+            let activeNumber;
+            el.forEach(function(ele)
             {
-                if (e % element == 0)
+                if(typeof ele === 'number' && (ele % 1) === 0)
                 {
-
-                    hasOne = true
+                    activeNumber = ele;
                 }
-                else
+
+                if(typeof ele === 'string')
                 {
-                    element.forEach(function(el)
+                    if(e % activeNumber == 0)
                     {
-                        console.log(el)
-                    })
-                    console.log(e)
-                    hasOne = true
+                        output += ele;
+                    }
                 }
-
-            }
-
+            });
         });
-        //console.log(output)
+        if(output === '')
+        {
+            output = e;
+        }
+        console.log(output)
     });
 }
