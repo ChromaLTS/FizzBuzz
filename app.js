@@ -1,31 +1,32 @@
 let times = 1000;
 let numberArray = []
-let arrayOfModulus = [
-    [3, "Fuzz"],
-    [5, "Buzz"],
-    [7, "Cuzz"]
+let numbersToChange = [
+    {3: "Fuzz"},
+    {5: "Buzz"},
+    {7: "Cuzz"}
 ]
 
-init();
-runNumbers();
-
-function init()
+for (var i = 1; i <= times; i++)
 {
-    for (var i = 1; i <= times; i++)
-    {
-        numberArray.push(i)
-    }
+    numberArray.push(i)
 }
 
+runNumbers(numberArray);
 
-function runNumbers()
+
+
+function runNumbers(numbers, replaceList)
 {
-    numberArray.forEach(function(e) 
-    {
+    numbers.map(number => {
         let output = '';
-        arrayOfModulus.forEach(function(el)
-        {
-            let activeNumber;
+        replaceList.map(replaceElement => {
+            numberToReplace = Object.keys(replaceElement)[0]
+            value = replaceElement[0]
+
+            if(number % numberToReplace == 0)
+            {
+                output += ele;
+            }
             el.forEach(function(ele)
             {
                 if(typeof ele === 'number' && (ele % 1) === 0)
@@ -35,7 +36,7 @@ function runNumbers()
 
                 if(typeof ele === 'string')
                 {
-                    if(e % activeNumber == 0)
+                    if(number % activeNumber == 0)
                     {
                         output += ele;
                     }
@@ -44,7 +45,7 @@ function runNumbers()
         });
         if(output === '')
         {
-            output = e;
+            output = number;
         }
         console.log(output)
     });
