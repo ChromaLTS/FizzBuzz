@@ -11,7 +11,7 @@ for (var i = 1; i <= times; i++)
     numberArray.push(i)
 }
 
-runNumbers(numberArray);
+runNumbers(numberArray, numbersToChange);
 
 
 
@@ -21,28 +21,13 @@ function runNumbers(numbers, replaceList)
         let output = '';
         replaceList.map(replaceElement => {
             numberToReplace = Object.keys(replaceElement)[0]
-            value = replaceElement[0]
+            value = replaceElement[numberToReplace]
 
             if(number % numberToReplace == 0)
             {
-                output += ele;
+                output += value;
             }
-            el.forEach(function(ele)
-            {
-                if(typeof ele === 'number' && (ele % 1) === 0)
-                {
-                    activeNumber = ele;
-                }
-
-                if(typeof ele === 'string')
-                {
-                    if(number % activeNumber == 0)
-                    {
-                        output += ele;
-                    }
-                }
-            });
-        });
+        })
         if(output === '')
         {
             output = number;
