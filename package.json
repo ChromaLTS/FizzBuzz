@@ -4,7 +4,8 @@
   "description": "FizzBuzz",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "jest": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/BitterBaam/FizzBuzz/issues"
   },
-  "homepage": "https://github.com/BitterBaam/FizzBuzz#readme"
+  "homepage": "https://github.com/BitterBaam/FizzBuzz#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
