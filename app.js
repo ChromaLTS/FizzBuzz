@@ -1,3 +1,5 @@
+import {fizzbuzz} from './functions/fizzbuzz.js';
+
 let times = 1000;
 let numberArray = []
 let numbersToChange = [
@@ -11,27 +13,9 @@ for (var i = 1; i <= times; i++)
     numberArray.push(i)
 }
 
-runNumbers(numberArray, numbersToChange);
+fizzbuzz(numberArray, numbersToChange).map(element => {
+    console.log(element)
+})
 
 
 
-function runNumbers(numbers, replaceList)
-{
-    numbers.map(number => {
-        let output = '';
-        replaceList.map(replaceElement => {
-            numberToReplace = Object.keys(replaceElement)[0]
-            value = replaceElement[numberToReplace]
-
-            if(number % numberToReplace == 0)
-            {
-                output += value;
-            }
-        })
-        if(output === '')
-        {
-            output = number;
-        }
-        console.log(output)
-    });
-}

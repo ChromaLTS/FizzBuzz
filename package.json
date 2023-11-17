@@ -4,7 +4,8 @@
   "description": "FizzBuzz",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll"
   },
   "repository": {
     "type": "git",
@@ -12,8 +13,12 @@
   },
   "author": "",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/BitterBaam/FizzBuzz/issues"
   },
-  "homepage": "https://github.com/BitterBaam/FizzBuzz#readme"
+  "homepage": "https://github.com/BitterBaam/FizzBuzz#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
