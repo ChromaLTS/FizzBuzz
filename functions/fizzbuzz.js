@@ -1,12 +1,18 @@
-function fizzbuzz(numbers, replaceList)
-{
-    result = []
+function fizzbuzz(numbers, replaceList) {
+    if(numbers === undefined && replaceList === undefined)
+    {
+        throw new Error('No arguments given')
+    }
+    if(numbers === undefined || replaceList === undefined)
+    {
+        throw new Error('Missing an argument')
+    }
 
-    numbers.map(number => {
+    let result = numbers.map(number => {
         let output = '';
-        replaceList.map(replaceElement => {
-            numberToReplace = Object.keys(replaceElement)[0]
-            value = replaceElement[numberToReplace]
+        replaceList.forEach(replaceElement => {
+            let numberToReplace = Object.keys(replaceElement)[0]
+            let value = replaceElement[numberToReplace]
 
             if(number % numberToReplace == 0)
             {
@@ -17,7 +23,7 @@ function fizzbuzz(numbers, replaceList)
         {
             output = number;
         }
-        result.push(output)
+        return output;
     });
     
     return result;
