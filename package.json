@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "jest": "jest --watchAll"
+    "jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
   },
   "author": "",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/BitterBaam/FizzBuzz/issues"
   },
